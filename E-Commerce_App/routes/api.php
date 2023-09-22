@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Admin\Auth\LoginAdminController;
 use App\Http\Controllers\Api\Admin\Auth\LogOutAdminController;
 use App\Http\Controllers\Api\Admin\RegisterAdminController;
+use App\Http\Controllers\Api\Product\ProductController;
 use App\Http\Controllers\Api\User\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,9 @@ Route::middleware(['auth:sanctum','verified'])->group(function () { //use user t
 Route::middleware(['auth:sanctum','admin'])->group(function () {
     Route::post('admin/logout',[LogOutAdminController::class,'logout']);
     Route::post('admin/register',[RegisterAdminController::class,'register']);
+    Route::resource('admin/products','ProductController');
+    Route::resource('admin/categories','CategoryController');
+    Route::resource('admin/discounts','DiscountController');
 });
 
 Route::post('users',[UserController::class,'create']); // register user

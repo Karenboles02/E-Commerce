@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\User\DeleteUserRequest;
 use App\Http\Requests\Api\User\StoreUserRequest;
 use App\Http\Requests\Api\User\UpdateUserRequest;
+
 use App\Http\Resources\UserResource;
 use App\Http\Resources\UsersResource;
 use App\Models\User;
